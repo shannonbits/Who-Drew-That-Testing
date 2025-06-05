@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhoDrewDat - Game Room</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Who<span class="drew">Drew</span>Dat?</h1>
+        <div id="gameState">Waiting for players...</div>
+        <div id="timer">Time: 60s</div>
+        <div id="score">Score: 0</div>
+    </header>
+
+    <main>
+        <div class="game-area">
+            <div class="canvas-container">
+                <canvas id="drawingCanvas" width="800" height="500"></canvas>
+                <div class="word-display" id="wordDisplay">????</div>
+                <div class="drawing-tools">
+                    <input type="color" id="colorPicker" value="#000000">
+                    <input type="range" id="brushSize" min="1" max="30" value="5">
+                    <button id="clearBtn">🧹 Clear</button>
+                    <button id="undoBtn">↩️ Undo</button>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="players-container">
+                    <h3>Artists <span id="playerCount">(0)</span></h3>
+                    <ul id="playersList"></ul>
+                </div>
+                
+                <div class="chat-container">
+                    <div id="chatMessages"></div>
+                    <div class="chat-input">
+                        <input type="text" id="chatInput" placeholder="Type your guess...">
+                        <button id="sendBtn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="firebase-config.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
